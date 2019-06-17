@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get "/order", to: "orders#index", as: "order_items"
   get "/order/new", to: "order_items#new", as: "new_order_item"
   post "/order", to: "order_items#create"
+  resources :order_items, only: %i[edit update destroy]
 end
